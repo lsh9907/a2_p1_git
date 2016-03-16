@@ -1,9 +1,11 @@
-<!--Common header-->
+<!--shared header-->
 <%- include ../partials/header2.ejs %>
 <main role="main" class="clearfix">
     <div class="container container_resize container_margin">
         <h1><%= title %></h1>
+        <!--a link to add a new branch-->
         <a href="add" class="manage_link">Add a new branch</a>
+        <!--branches directory with five fields for each business-->
         <table>
             <thead>
             <tr>
@@ -30,5 +32,5 @@
         </table>
     </div>
 </main>
-<!--Common footer-->
+<!--shared footer-->
 <%- include ../partials/footer.ejs %>

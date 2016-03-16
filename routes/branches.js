@@ -1,3 +1,4 @@
+// connect Express
 var express = require('express');
 var router = express.Router();
 
@@ -7,9 +8,9 @@ var mongoose = require('mongoose');
 // make this page to refer to the database
 var Branch = require('../models/branch');
 
-// Set up the get handler for the main articles page
+// set up the GET handler for branches page
 router.get('/', function(req, res, next) {
-    // use the article model to query the articles collection in the db
+    // use the article model to query the articles collection in the database
     Branch.find(function(err, branches) {
         if (err) {
             console.log(err);
@@ -38,6 +39,7 @@ router.get('/manage_directory', function(req, res, next) {
         }
     })
 });
+// GET handler for delete process
 router.get('/delete/:id', function(req, res, next) {
     // grab the id parameter from the url
     var id = req.params.id;
@@ -52,15 +54,15 @@ router.get('/delete/:id', function(req, res, next) {
         }
     });
 });
-// GET handler for add to display a blank form
+// GET handler for add page to display a new form
 router.get('/add', function(req, res, next) {
     res.render('branches/add', {
         title: 'New Article'
     });
 });
-// POST handler for add to process the form
+// POST handler for add page to process the form
 router.post('/add', function(req, res, next) {
-    // save a new article using our Article model
+    // save a new article using Article model
     Branch.create( {
             number: req.body.number,
             location: req.body.location,
@@ -68,14 +70,13 @@ router.post('/add', function(req, res, next) {
             employees: req.body.employees,
             rate: req.body.rate
         });
-    // redirect to main articles page
+    // redirect to manage_directory page
     res.redirect('/branches/manage_directory');
 });
-// GET handler for edit to show the populated form
+// GET handler for edit page to show the populated form
 router.get('/:id', function(req, res, next) { // we make an id
     // create an id variable to store the id from the url
     var id = req.params.id;
-
     // look up the selected article
     Branch.findById(id, function (err, branch) {
         if (err) {
@@ -90,11 +91,10 @@ router.get('/:id', function(req, res, next) { // we make an id
         }
     });
 });
-// POST handler for edit to update the article
+// POST handler for edit page to update the article
 router.post('/:id', function(req, res, next) {
     // create an id variable to store the id from the url
     var id = req.params.id;
-
     // fill the article object
     var branch = new Branch({
         _id: id,
@@ -104,8 +104,7 @@ router.post('/:id', function(req, res, next) {
         employees: req.body.employees,
         rate: req.body.rate
     });
-
-    // use mongoose and our Article model to update
+    // use mongoose and Article model to update
     Branch.update({_id: id}, branch, function(err) {
         if (err) {
             console.log(err);
@@ -115,5 +114,37 @@ router.post('/:id', function(req, res, next) {
         }
     });
 });
+
+
+// npm fulltext-engine for searchbar
+
+//var levelQuery = require('level-queryengine'),
+//    fulltextEngine = require('fulltext-engine'),
+//    levelup = require('levelup'),
+//    db = levelQuery(levelup('my-db'));
+//
+//db.query.use(fulltextEngine());
+//
+//// index the properties you want (the 'doc' property on objects in this case):
+//db.ensureIndex('doc', 'fulltext', fulltextEngine.index());
+//
+//db.batch(makeSomeData(), function (err) {
+//    // will find all objects where 'my' and 'query' are present
+//    db.query('doc', 'my query')
+//        .on('data', console.log)
+//        .on('stats', function (stats) {
+//            // stats contains the query statistics in the format
+//            //  { indexHits: 1, dataHits: 1, matchHits: 1 });
+//        });
+//
+//    // will find all objects where 'my' OR 'query' are present
+//    db.query('doc', 'my query', 'or')
+//        .on('data', console.log)
+//        .on('stats', function (stats) {
+//            // stats contains the query statistics in the format
+//            //  { indexHits: 1, dataHits: 1, matchHits: 1 });
+//        });
+//});
+
 // make public
 module.exports = router;

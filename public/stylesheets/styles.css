@@ -1,12 +1,15 @@
 @charset "utf-8";
+/* import various css to main css */
 @import url("normalize.css");
 @import url("box-sizing.css");
 @import url("clearfix.css");
 @import url("nav-justify.css");
+/* import Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Coustard:900");
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 @import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
 
+/* Shared styles for each page */
 body {
   background: black;
   font-size: 100%;
@@ -273,4 +276,22 @@ p#copyright {
   bottom: 90px;
   right: 22px;
   width: 10%;
+}
+input#searchbar {
+  margin-left: 20px;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
 }

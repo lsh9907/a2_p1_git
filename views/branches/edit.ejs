@@ -1,7 +1,8 @@
-<!--Common header-->
+<!--shared header-->
 <%- include ../partials/header2.ejs %>
 <main role="main" class="clearfix">
     <div class="container container_resize container_margin">
+     <!--edit form-->
     <form method="post" action="<%= branch._id %>">
         <h1><%= title %></h1>
         <div>
@@ -29,5 +30,5 @@
     </form>
     </div>
 </main>
-<!--Common footer-->
+<!--shared footer-->
 <%- include ../partials/footer.ejs %>

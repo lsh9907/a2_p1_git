@@ -1,6 +1,7 @@
-<!--Common header-->
+<!--shared header-->
 <%- include partials/header.ejs %>
 <main role="main" class="clearfix">
+    <!--first container to show headquarters-->
     <div class="container2 clearfix">
         <h2 id="c2_heading">Headquarters</h2>
         <div id="googleMap" style="width:400px;height:280px;"></div>
@@ -13,10 +14,15 @@
             </div>
         </div>
     </div>
+    <!--second container to show branches directory-->
     <div class="container container_resize">
         <h1><%= title %></h1>
+        <div>
         <a href="branches/manage_directory" class="manage_link">Manage Directory</a>&nbsp;&nbsp;&nbsp;
         <a href="/auth/login" class="manage_link">Member Login / Register</a>
+            <input id="searchbar" placeholder="Search a branch">
+            <button>Search</button>
+        </div>
         <table>
             <thead>
             <tr>
@@ -40,6 +46,7 @@
             </tbody>
         </table>
     </div>
+    <!--triangular footer in bottom-right corner-->
     <div class="footer triangle-bottomright">
         <p id="likeus">
             <a href="">Like us on Facebook!</a>
@@ -50,5 +57,5 @@
     </div>
     <a href="#"><img src="images/cafe_albero/thumbs1.png" id="thumb" /></a>
 </main>
-<!--Common footer-->
+<!--shared footer-->
 <%- include partials/footer.ejs %>
