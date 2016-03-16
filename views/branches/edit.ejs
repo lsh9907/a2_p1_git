@@ -1,6 +1,7 @@
 <!--Common header-->
-<%- include ../partials/header2.ejs %>
-<main role="main" class="clearfix add_main">
+<%- include ../partials/header3.ejs %>
+<main role="main" class="clearfix">
+    <div class="container container_resize container_margin">
     <form method="post" action="<%= branch._id %>">
         <h1><%= title %></h1>
         <div>
@@ -26,6 +27,7 @@
         <button>Edit</button>
         <button><a href="/branches/delete/<%= branch._id %>" class="confirmation">Delete</a></button>
     </form>
+    </div>
 </main>
 <!--Common footer-->
 <%- include ../partials/footer.ejs %>

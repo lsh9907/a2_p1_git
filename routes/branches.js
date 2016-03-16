@@ -23,6 +23,35 @@ router.get('/', function(req, res, next) {
         }
     })
 });
+// GET handler for manage_directory page
+router.get('/manage_directory', function(req, res, next) {
+    Branch.find(function(err, branches) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            res.render('branches/manage_directory', {
+                title: 'Manage Directory',
+                branches: branches
+            });
+
+        }
+    })
+});
+router.get('/delete/:id', function(req, res, next) {
+    // grab the id parameter from the url
+    var id = req.params.id;
+
+    Branch.remove({_id: id}, function(err) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            // show updated articles list
+            res.redirect('/branches/manage_directory');
+        }
+    });
+});
 // GET handler for add to display a blank form
 router.get('/add', function(req, res, next) {
     res.render('branches/add', {
@@ -40,7 +69,7 @@ router.post('/add', function(req, res, next) {
             rate: req.body.rate
         });
     // redirect to main articles page
-    res.redirect('/branches');
+    res.redirect('/branches/manage_directory');
 });
 // GET handler for edit to show the populated form
 router.get('/:id', function(req, res, next) { // we make an id
@@ -82,22 +111,7 @@ router.post('/:id', function(req, res, next) {
             console.log(err);
             res.end(err);
         } else {
-            res.redirect('/branches');
-        }
-    });
-});
-// GET handler for delete using article id parameter
-router.get('/delete/:id', function(req, res, next) {
-    // grab the id parameter from the url
-    var id = req.params.id;
-
-    Branch.remove({_id: id}, function(err) {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        } else {
-            // show updated articles list
-            res.redirect('/branches');
+            res.redirect('/branches/manage_directory');
         }
     });
 });

@@ -127,6 +127,13 @@ div.container_resize {
   padding-left: 50px;
   position: relative;
 }
+div.container_margin table {
+  margin:0 auto;
+  margin-top: 15px;
+}
+div.container_margin table tbody tr a#edit_branch:hover, a#add_branch:hover {
+  color: rgba(0,0,255,.8);
+}
 div.container_resize table {
   width: 600px;
   background: white;
@@ -138,7 +145,7 @@ div.container_resize table tr{
 div.container_resize table td {
   padding: 10px;
 }
-div.container_resize a#member_login {
+div.container_resize a#manage {
   position: relative;
   right: 380px;
   padding-bottom: 10px;
