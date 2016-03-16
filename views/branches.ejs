@@ -1,0 +1,58 @@
+<!--Common header-->
+<%- include partials/header.ejs %>
+<main role="main" class="clearfix">
+    <div class="container2 clearfix">
+        <h2 id="c2_heading">Headquarters</h2>
+        <div id="googleMap" style="width:400px;height:280px;"></div>
+        <div id="location_hours">
+            <p>Address: 13 Emest PI, Crows Nest NSW 2065, Australia</p>
+            <div id="hours">
+                <h4>Nationwide Customer Service</h4>
+                <p>Telephone: (+61) 400 000 0000</p>
+                <p>Email: cafe_albero_cs@mail.com </p>
+            </div>
+        </div>
+    </div>
+    <div class="container container_resize">
+        <h1><%= title %></h1>
+        <!--<ul>-->
+            <!--<li><a href="branches/add">Add</a></li>-->
+        <!--</ul>-->
+        <a href="/auth/login" id="member_login">Member Login</a>
+        <table>
+            <thead>
+            <tr>
+                <th scope="rowgroup">Branch #</th>
+                <th scope="col">Location</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Employees</th>
+                <th scope="col">Rate</th>
+                <!--<th scope="col">Edit</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <% for (var i = 0; i < branches.length; i++) { %>
+            <tr>
+                <th scope="row"><%= branches[i].number %></th>
+                <td><%= branches[i].location %></td>
+                <td><%= branches[i].owner %></td>
+                <td><%= branches[i].employees %></td>
+                <td><%= branches[i].rate %></td>
+                <!--<td id="edit_link"><a href="branches/<%= branches[i]._id %>">Edit</a></td>-->
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer triangle-bottomright">
+        <p id="likeus">
+            <a href="">Like us on Facebook!</a>
+        </p>
+        <p id="copyright">
+            &copy; 2016 CAFE ALBERO. All rights reserved.
+        </p>
+    </div>
+    <a href="#"><img src="images/cafe_albero/thumbs1.png" id="thumb" /></a>
+</main>
+<!--Common footer-->
+<%- include partials/footer.ejs %>

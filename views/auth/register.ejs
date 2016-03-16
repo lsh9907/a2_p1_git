@@ -1,0 +1,22 @@
+<!--Common header-->
+<%- include ../partials/header2.ejs %>
+<main role="main" class="clearfix">
+    <h1>Register</h1>
+    <form method="post" action="/auth/register">
+        <div>
+            <label for="username">Username: *</label>
+            <input name="username" id="username" required>
+        </div>
+        <div>
+            <label for="password">Password: *</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+            <label for="confirm">Confirm: *</label>
+            <input type="password" name="confirm" id="confirm" required>
+        </div>
+        <button>Register</button>
+    </form>
+</main>
+<!--Common footer-->
+<%- include ../partials/footer.ejs %>

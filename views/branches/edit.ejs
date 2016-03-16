@@ -1,0 +1,31 @@
+<!--Common header-->
+<%- include ../partials/header2.ejs %>
+<main role="main" class="clearfix add_main">
+    <form method="post" action="<%= branch._id %>">
+        <h1><%= title %></h1>
+        <div>
+            <label for="number">Branch #: *</label>
+            <input name="number" id="number" required value="<%= branch.number %>">
+        </div>
+        <div>
+            <label for="location">Location: *</label>
+            <input name="location" id="location" required value="<%= branch.location %>">
+        </div>
+        <div>
+            <label for="owner">Owner: *</label>
+            <input name="owner" id="owner" required value="<%= branch.owner %>">
+        </div>
+        <div>
+            <label for="employees">Employees: *</label>
+            <input name="employees" id="employees" required value="<%= branch.employees %>">
+        </div>
+        <div>
+            <label for="rate">Rate: *</label>
+            <input name="rate" id="rate" required value="<%= branch.rate %>">
+        </div>
+        <button>Edit</button>
+        <button><a href="/branches/delete/<%= branch._id %>" class="confirmation">Delete</a></button>
+    </form>
+</main>
+<!--Common footer-->
+<%- include ../partials/footer.ejs %>

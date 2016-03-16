@@ -1,0 +1,266 @@
+@charset "utf-8";
+@import url("normalize.css");
+@import url("box-sizing.css");
+@import url("clearfix.css");
+@import url("nav-justify.css");
+@import url("https://fonts.googleapis.com/css?family=Coustard:900");
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+
+body {
+  background: black;
+  font-size: 100%;
+  font-family: 'Roboto Slab', serif;
+}
+img {
+  max-width: 100%;
+}
+div.page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+header {
+  background-color: rgb(184, 134, 37);
+}
+div#brand {
+  text-align: center;
+}
+div#brand span {
+  line-height: 154px;
+  position: relative;
+  font-size: 60px;
+  font-family: 'Coustard', serif;
+}
+div#brand span:first-child {
+  float: left;
+  left: 150px;
+}
+div#brand span:last-child {
+  float: right;
+  right: 150px;
+}
+img#logo {
+  display: inline-block;
+  width: 160px;
+  height: 140px;
+  margin:10px;
+}
+nav {
+  background-color: rgb(65, 53, 21);
+}
+nav ul#mainnav {
+  list-style: none;
+  margin: 0px;
+  padding: 0px 20px;
+  height: 45px;
+  position: relative;
+}
+nav ul#mainnav li {
+  display: inline-block;
+  width: 150px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-weight: bold;
+}
+nav ul#subnav {
+    border-top: 1px solid white;
+}
+nav:hover ul#subnav {
+  visibility: visible;
+}
+nav ul#mainnav li a, ul#subnav li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+nav ul#subnav {
+  position: absolute;
+  width: 960px;
+  z-index: 1000;
+  padding: 15px 10px;
+  font-size: 14px;
+  background-color: rgb(65, 53, 21);
+  /*background-color: rgb(45, 31, 2);*/
+  visibility: hidden;
+}
+nav ul#subnav li {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0px 49px;
+  vertical-align: top;
+}
+nav ul#subnav h4 {
+  margin: 0px;
+  margin-bottom: 5px;
+  padding: 0px;
+  color: white;
+}
+nav ul#subnav a {
+  margin: 3px 0px;
+}
+main {
+  position: relative;
+  background-color: rgb(44,25,1);
+}
+main.add_main {
+  padding: 50px;
+}
+main.add_main form h1, label{
+  color: white;
+}
+main p, p#copyright {
+  margin: 0px;
+  padding: 0px;
+}
+div.container {
+  border: 1px solid white;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: center;
+  padding: 50px;
+  padding-top: 60px;
+}
+div.container_resize {
+  padding: 35px;
+  padding-left: 50px;
+  position: relative;
+}
+div.container_resize table {
+  width: 600px;
+  background: white;
+}
+div.container_resize table tr{
+  border: 1px solid black;
+  position: relative;
+}
+div.container_resize table td {
+  padding: 10px;
+}
+div.container_resize a#member_login {
+  position: relative;
+  right: 380px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  color: red;
+}
+div.container_resize a#member_login:hover {
+  color: rgba(255,0,0, .8);
+}
+div.container_resize h1 {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+  color: white;
+}
+h2#c1_heading {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  bottom: 25px;
+  color: white;
+}
+section.menu {
+  display: inline-block;
+  width: 220px;
+  margin: 0px 30px;
+  background-color: rgb(218,193,137);
+  font-weight: bold;
+  box-shadow: 0px 5px 11px rgba(218,193,137,.4);
+}
+section.menu p {
+  padding: 5px 0px;
+}
+section.menu a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-family: arial;
+}
+section.menu a:hover {
+  color: rgba(0,0,0,.8);
+}
+img.coffee {
+  width: 250px;
+  height: 168px;
+}
+img#longblack, img#earlgrey {
+  transform: rotateY(180deg);
+}
+
+div.container2 {
+  padding: 50px;
+  padding-top: 60px;
+  text-align: center;
+}
+h2#c2_heading {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  bottom: 22px;
+  color: white;
+  margin-bottom: 5px;
+}
+div#googleMap {
+  float: left;
+  margin-right: 35px;
+}
+div#location_hours {
+  text-align: left;
+  color: white;
+  font-family: arial;
+  margin-top: 30px;
+  font-size: 15px;
+}
+div#hours p {
+  margin: 5px;
+  padding: 0px;
+}
+div#hours h4 {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 30px;
+}
+div.triangle-bottomright {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 300px solid rgb(235,221,192);
+  border-left: 300px solid transparent;
+}
+p#likeus {
+  width: 205px;
+  position: relative;
+  right: 115px;
+  top: 220px;
+  right: 208px;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  font-weight: bold;
+}
+p#likeus a {
+  text-decoration: none;
+  color: black;
+}
+p#likeus a:hover {
+  color: rgba(0,0,0,.9);
+}
+p#copyright {
+  width: 300px;
+  position: relative;
+  right: 270px;
+  top: 235px;
+  right: 307px;
+  font-size: 10px;
+  text-align: right;
+  font-family: 'Coustard', serif;
+}
+#thumb {
+  position: absolute;
+  bottom: 90px;
+  right: 22px;
+  width: 10%;
+}

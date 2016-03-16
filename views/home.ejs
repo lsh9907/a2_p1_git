@@ -1,0 +1,82 @@
+<!--Common header-->
+<%- include partials/header.ejs %>
+<main role="main" class="clearfix">
+    <div id="jssor_1" class="slider" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('../public/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <div data-p="225.00" style="display: none;">
+                <img data-u="image" src="images/cafe_albero/cafe1.JPG" />
+                <div class="slider_text" style="font-family: arial; position: absolute; top: 30px; left: 80px; width: 480px; height: 330px; font-size: 32px; font-weight:bold; color: #ffffff; line-height: 60px; background:rgba(0,0,0,.7); padding: 30px; text-align: center;
+top: 50%;
+transform: translateY(-50%);">
+                    Welcome to CAFE ALBERO
+                    <div style="font-family: arial; font-size: 22px; font-weight:normal; line-height: 33px; margin-top: 20px;">CAFE ALBERO is a eleven-year-old cafe located in Sydney, Australia. Our friendly staffs serve
+                        fresh coffee and beverages with delicious snacks. Come and enjoy your time with us! </div>
+                </div>
+            </div>
+            <div data-p="225.00" style="display: none;">
+                <img data-u="image" src="images/cafe_albero/cafe3.JPG" />
+            </div>
+            <div data-p="225.00" style="display: none;">
+                <img data-u="image" src="images/cafe_albero/cafe4.JPG" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
+        <a href="http://www.jssor.com" style="display:none">Slideshow Maker</a>
+    </div>
+    <div class="container">
+        <h2 id="c1_heading">Popular Choices</h2>
+        <section class="menu">
+            <a href="">
+                <img src="images/cafe_albero/longblack.PNG" id="longblack" class="coffee" />
+                <p>Long Black</p>
+            </a>
+        </section>
+        <section class="menu">
+            <a href="">
+                <img src="images/cafe_albero/latte.PNG" id="latte" class="coffee" />
+                <p>Latte</p>
+            </a>
+        </section>
+        <section class="menu">
+            <a href="">
+                <img src="images/cafe_albero/blueberry_scone.jpg" id="blueberry_scone" class="coffee" />
+                <p>Blueberry Scone</p>
+            </a>
+        </section>
+    </div>
+    <div class="container2 clearfix">
+        <h2 id="c2_heading">Contact Us</h2>
+        <div id="googleMap" style="width:400px;height:280px;"></div>
+        <div id="location_hours">
+            <p>Headquarters: 13 Emest PI, Crows Nest NSW 2065, Australia</p>
+            <div id="hours">
+                <h4>Nationwide Customer Service</h4>
+                <p>Telephone: (+61) 400 000 0000</p>
+                <p>Email: cafe_albero_cs@mail.com </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer triangle-bottomright">
+        <p id="likeus">
+            <a href="">Like us on Facebook!</a>
+        </p>
+        <p id="copyright">
+            &copy; 2016 CAFE ALBERO. All rights reserved.
+        </p>
+    </div>
+    <a href="#"><img src="images/cafe_albero/thumbs1.png" id="thumb" /></a>
+</main>
+<!--Common footer-->
+<%- include partials/footer.ejs %>

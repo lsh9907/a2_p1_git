@@ -1,0 +1,19 @@
+        nav ul#mainnav {
+            text-align: justify;
+        }
+        nav ul#mainnav:after {
+            content: " ";
+            display: inline-block;
+            width: 100%;
+        }
+        #subnav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+        }
+        #subnav:after {
+            content: " ";
+            display: inline-block;
+            width: 100%;
+        }
