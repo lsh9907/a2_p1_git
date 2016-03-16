@@ -15,11 +15,8 @@
     </div>
     <div class="container container_resize">
         <h1><%= title %></h1>
-        <!--<ul>-->
-            <!--<li><a href="branches/add">Add</a></li>-->
-        <!--</ul>-->
-        <!--<a href="/auth/login" id="member_login">Member Login</a>-->
-        <a href="branches/manage_directory" id="manage">Manage Directory</a>
+        <a href="branches/manage_directory" class="manage_link">Manage Directory</a>&nbsp;&nbsp;&nbsp;
+        <a href="/auth/login" class="manage_link">Member Login / Register</a>
         <table>
             <thead>
             <tr>
@@ -28,7 +25,6 @@
                 <th scope="col">Owner</th>
                 <th scope="col">Employees</th>
                 <th scope="col">Rate</th>
-                <!--<th scope="col">Edit</th>-->
             </tr>
             </thead>
             <tbody>
@@ -39,7 +35,6 @@
                 <td><%= branches[i].owner %></td>
                 <td><%= branches[i].employees %></td>
                 <td><%= branches[i].rate %></td>
-                <!--<td id="edit_link"><a href="branches/<%= branches[i]._id %>">Edit</a></td>-->
             </tr>
             <% } %>
             </tbody>

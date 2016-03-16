@@ -9,11 +9,6 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-// auth packages
-var passport = require('passport');
-var session = require('express-session');
-var flash = require('connect-flash');
-var localStrategy = require('passport-local').Strategy;
 
 // add the branches route
 var branches = require('./routes/branches');
@@ -33,12 +28,6 @@ db.once('open', function(callback){
   console.log('Connected to mongodb');
 });
 
-// connect to local
-//mongoose.connect('mongodb://localhost/test');
-
-// connect to mlab
-//mongoose.connect('mongodb://200283481:920222@ds064278.mlab.com:64278/200283481');
-
 // read db connection string from our config file
 var configDb = require('./config/db.js');
 mongoose.connect(configDb.url);
@@ -50,24 +39,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-//// enable flash for showing messages
-//app.use(flash());
-//// passport config section
-//app.use(session({
-//  secret: 'lesson8 auth',
-//  resave: true,
-//  saveUninitialized: false
-//}));
-//////////////////////////
-//app.use(passport.initialize());
-//////////////////////////
-//app.use(passport.session());
-//// use the Account model we built
-//var Account = require('./models/account');
-////passport.createStrategy(Account.createStrategy);
-////// methods for accessing the session data
-////passport.serializeUser(Account.serializeUser);
 
 app.use('/', routes);
 app.use('/users', users);

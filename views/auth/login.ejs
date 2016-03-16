@@ -1,18 +1,21 @@
 <!--Common header-->
 <%- include ../partials/header2.ejs %>
 <main role="main" class="clearfix">
-    <h1>Login</h1>
-    <form method="post" action="/auth/login">
-        <div>
-            <label for="username">Username: *</label>
-            <input name="username" id="username" required>
-        </div>
-        <div>
-            <label for="password">Password: *</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button>Login</button>
-    </form>
+    <div class="container container_resize container_margin">
+        <h1>Login</h1>
+        <a href="register" class="manage_link">Register</a>
+        <form method="post" action="/auth/login">
+            <div>
+                <label for="username">Username: *</label>
+                <input name="username" id="username" required>
+            </div>
+            <div>
+                <label for="password">Password: *</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button>Login</button>
+        </form>
+    </div>
 </main>
 <!--Common footer-->
 <%- include ../partials/footer.ejs %>
