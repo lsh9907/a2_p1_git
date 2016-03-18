@@ -14,6 +14,13 @@ var users = require('./routes/users');
 var branches = require('./routes/branches');
 // add auth route
 var auth = require('./routes/auth');
+// add images route
+var images = require('./routes/images');
+// auth packages
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+var localStrategy = require('passport-local').Strategy;
 
 // create an app
 var app = express();
@@ -39,12 +46,33 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// enable flash for showing messages
+app.use(flash());
+// passport config section
+app.use(session({
+  secret: 'lesson8 auth',
+  resave: true,
+  saveUninitialized: false
+}));
+// initialize function for passport
+app.use(passport.initialize());
+// session function for passport
+app.use(passport.session());
+// use the Account model we built
+var Account = require('./models/account');
+passport.use(Account.createStrategy());
+//// methods for accessing the session data
+passport.serializeUser(Account.serializeUser);
+passport.deserializeUser(Account.deserializeUser);
+
 app.use('/', routes);
 app.use('/users', users);
 // map requests at /branches
 app.use('/branches', branches);
 // map requests at /auth
 app.use('/auth', auth);
+// map requests at /images
+app.use('/images', images);
 
 // error handlers
 app.use(function(req, res, next) {

@@ -116,35 +116,5 @@ router.post('/:id', function(req, res, next) {
 });
 
 
-// npm fulltext-engine for searchbar
-
-//var levelQuery = require('level-queryengine'),
-//    fulltextEngine = require('fulltext-engine'),
-//    levelup = require('levelup'),
-//    db = levelQuery(levelup('my-db'));
-//
-//db.query.use(fulltextEngine());
-//
-//// index the properties you want (the 'doc' property on objects in this case):
-//db.ensureIndex('doc', 'fulltext', fulltextEngine.index());
-//
-//db.batch(makeSomeData(), function (err) {
-//    // will find all objects where 'my' and 'query' are present
-//    db.query('doc', 'my query')
-//        .on('data', console.log)
-//        .on('stats', function (stats) {
-//            // stats contains the query statistics in the format
-//            //  { indexHits: 1, dataHits: 1, matchHits: 1 });
-//        });
-//
-//    // will find all objects where 'my' OR 'query' are present
-//    db.query('doc', 'my query', 'or')
-//        .on('data', console.log)
-//        .on('stats', function (stats) {
-//            // stats contains the query statistics in the format
-//            //  { indexHits: 1, dataHits: 1, matchHits: 1 });
-//        });
-//});
-
 // make public
 module.exports = router;

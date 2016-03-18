@@ -295,3 +295,8 @@ input#searchbar {
 :-ms-input-placeholder {
   text-align: center;
 }
+div#login_message {
+  margin-top: 20px;
+  color: red;
+  font-style: italic;
+}
